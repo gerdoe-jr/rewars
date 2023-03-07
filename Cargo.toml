@@ -4,7 +4,14 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# shared
 redengine = { path = "../redengine" }
+alkahest = { git = "https://github.com/zakarumych/alkahest", branch = "new", features = ["derive"]}
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# client-only
+# server-only
 
 
 [features]
@@ -13,10 +20,10 @@ server-binary = []
 
 [[bin]]
 name = "client"
-path = "src/client/bin/main.rs"
+path = "src/game/client/bin/main.rs"
 required-features = ["client-binary"]
 
 [[bin]]
 name = "server"
-path = "src/server/bin/main.rs"
+path = "src/game/server/bin/main.rs"
 required-features = ["server-binary"]
