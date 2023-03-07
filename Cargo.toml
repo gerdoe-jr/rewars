@@ -1,0 +1,22 @@
+[package]
+name = "rewars"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+redengine = { path = "../redengine" }
+
+
+[features]
+client-binary = []
+server-binary = []
+
+[[bin]]
+name = "client"
+path = "src/client/bin/main.rs"
+required-features = ["client-binary"]
+
+[[bin]]
+name = "server"
+path = "src/server/bin/main.rs"
+required-features = ["server-binary"]
