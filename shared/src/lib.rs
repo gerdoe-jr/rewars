@@ -1,4 +1,5 @@
 pub mod gamemessage;
+pub use gamemessage::*;
 
 pub fn setup_logging() {
     use tracing::{info, Level};
@@ -23,3 +24,5 @@ pub fn setup_logging() {
     info!("started logging successfully");
     info!("debug build: {}", cfg!(debug_assertions));
 }
+
+pub const MAX_CLIENTS_PER_SERVER: usize = 16;

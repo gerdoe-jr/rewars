@@ -14,21 +14,21 @@ dependencies = [
 
 [[package]]
 name = "alkahest"
-version = "0.2.0-rc.2"
-source = "git+https://github.com/zakarumych/alkahest?branch=new#027b2ee6276cb99a62734a00146f3e175426fe8a"
+version = "0.2.0-rc.6"
+source = "git+https://github.com/zakarumych/alkahest?tag=v0.2.0-rc.6#2c8d1b7df655733c56c7bc27498ee58d742d9d98"
 dependencies = [
  "alkahest-proc",
 ]
 
 [[package]]
 name = "alkahest-proc"
-version = "0.2.0-rc.2"
-source = "git+https://github.com/zakarumych/alkahest?branch=new#027b2ee6276cb99a62734a00146f3e175426fe8a"
+version = "0.2.0-rc.6"
+source = "git+https://github.com/zakarumych/alkahest?tag=v0.2.0-rc.6#2c8d1b7df655733c56c7bc27498ee58d742d9d98"
 dependencies = [
  "proc-easy",
  "proc-macro2",
  "quote",
- "syn",
+ "syn 1.0.109",
 ]
 
 [[package]]
@@ -99,13 +99,23 @@ dependencies = [
 
 [[package]]
 name = "cipher"
-version = "0.4.3"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1873270f8f7942c191139cb8a40fd228da6c3fd2fc376d7e92d47aa14aeb59e"
+checksum = "773f3b9af64447d2ce9850330c473515014aa235e6a783b02db81ff39e4a3dad"
 dependencies = [
  "crypto-common",
  "inout",
  "zeroize",
+]
+
+[[package]]
+name = "client"
+version = "0.1.0"
+dependencies = [
+ "rena",
+ "shared",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
@@ -166,9 +176,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.139"
+version = "0.2.140"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
+checksum = "99227334921fae1a979cf0bfdfcc6b3e5ce376ef57e16fb6fb3ea2ed6095f80c"
 
 [[package]]
 name = "log"
@@ -263,23 +273,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ba395da1356389c1b5d47749c76dffe6d7fe5340428fa4f59051c38c79b0cc3"
 dependencies = [
  "proc-macro2",
- "syn",
+ "syn 1.0.109",
 ]
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.51"
+version = "1.0.53"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d727cae5b39d21da60fa540906919ad737832fe0b1c165da3a34d6548c849d6"
+checksum = "ba466839c78239c09faf015484e5cc04860f88242cff4d03eb038f04b4699b73"
 dependencies = [
  "unicode-ident",
 ]
 
 [[package]]
 name = "quote"
-version = "1.0.23"
+version = "1.0.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8856d8364d252a14d474036ea1358d63c9e6965c8e5c1885c18f73d70bff9c7b"
+checksum = "4424af4bf778aae2051a77b60283332f386554255d722233d09fbfc7e30da2fc"
 dependencies = [
  "proc-macro2",
 ]
@@ -295,9 +305,9 @@ dependencies = [
 
 [[package]]
 name = "rechannel"
-version = "0.0.6"
+version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef943166ab684efe41e4a6855fa2783f04f2d23778734956bd777b2c673fe6be"
+checksum = "9a78a1b9f690de00ab9be902447d29e1770e5dfc8e184d1faffc6cea7c91b6b9"
 dependencies = [
  "bincode",
  "bytes",
@@ -306,7 +316,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "redengine"
+name = "rena"
 version = "0.1.0"
 dependencies = [
  "alkahest",
@@ -318,9 +328,9 @@ dependencies = [
 
 [[package]]
 name = "renet"
-version = "0.0.10"
+version = "0.0.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "63ba434752e9edd042d898c023178e157b4dec0848b8f70eec5fbdcde856b8f3"
+checksum = "aea041966cfc4d08ad0eec6cbf0c3ff9a6fc030f949e8de40c5962d005b9db95"
 dependencies = [
  "log",
  "rechannel",
@@ -329,42 +339,42 @@ dependencies = [
 
 [[package]]
 name = "renetcode"
-version = "0.0.6"
+version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c627f95d5e3d4378a67c5d56f0d78d4d71f78a789f7918f23b061d6769292797"
+checksum = "b4330d94d7a880f7717fa78c30ef8e3f15e1cc165502a911da437ac89cb585a3"
 dependencies = [
  "chacha20poly1305",
  "log",
 ]
 
 [[package]]
-name = "rewars"
-version = "0.1.0"
-dependencies = [
- "alkahest",
- "redengine",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "serde"
-version = "1.0.152"
+version = "1.0.158"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb7d1f0d3021d347a83e556fc4683dea2ea09d87bccdf88ff5c12545d89d5efb"
+checksum = "771d4d9c4163ee138805e12c710dd365e4f44be8be0503cb1bb9eb989425d9c9"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.152"
+version = "1.0.158"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af487d118eecd09402d70a5d72551860e788df87b464af30e5ea6a38c75c541e"
+checksum = "e801c1712f48475582b7696ac71e0ca34ebb30e09338425384269d9717c62cad"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn",
+ "syn 2.0.8",
+]
+
+[[package]]
+name = "server"
+version = "0.1.0"
+dependencies = [
+ "rena",
+ "shared",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
@@ -374,6 +384,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "900fba806f70c630b0a382d0d825e17a0f19fcd059a2ade1ff237bcddf446b31"
 dependencies = [
  "lazy_static",
+]
+
+[[package]]
+name = "shared"
+version = "0.1.0"
+dependencies = [
+ "alkahest",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
@@ -410,6 +429,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "syn"
+version = "2.0.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bcc02725fd69ab9f26eab07fad303e2497fad6fb9eba4f96c4d1687bdf704ad9"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "unicode-ident",
+]
+
+[[package]]
 name = "thread_local"
 version = "1.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -439,7 +469,7 @@ checksum = "4017f8f45139870ca7e672686113917c71c7a6e02d4924eda67186083c03081a"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn",
+ "syn 1.0.109",
 ]
 
 [[package]]
