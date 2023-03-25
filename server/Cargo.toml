@@ -8,6 +8,6 @@ name = "rewars_srv"
 
 [dependencies]
 shared = { path = "../shared" }
-rena = { path = "../../rena" }
+rena = { git = "https://github.com/gerdoe-jr/rena", branch = "master" }
 tracing = "0.1"
 tracing-subscriber = "0.3"
